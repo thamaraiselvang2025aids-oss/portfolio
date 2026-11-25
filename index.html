@@ -108,7 +108,13 @@ footer{text-align:center;color:var(--t2);font-size:.8rem;padding:30px}
 <div class="stats"><div class="card stat"><b data-n="5">0</b><span>Hackathon wins (5+)</span></div><div class="card stat"><b data-n="7">0</b><span>Finalist positions (7+)</span></div><div class="card stat"><b data-n="2">0</b><span>Judge / evaluator roles</span></div></div>
 <p class="sub">Totals are as I report them. Individual results below are listed separately and verified against certificates or official emails.</p>
 <div class="grid" id="hg"></div>
-<h3 style="margin:34px 0 6px">Other Hackathon Participations</h3><p class="sub" style="margin-bottom:14px">Hackathons I took part in, each backed by a participation certificate. Tap one to enlarge.</p><div class="grid cg" id="hp"></div></section>
+<div class="card" style="margin-top:28px;text-align:center;padding:36px 24px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(8,23,43,.92),rgba(5,11,24,.85));border-radius:16px">
+  <span class="tag" style="margin-bottom:10px">14+ Verified Credentials</span>
+  <h3 style="font-size:1.35rem;margin-bottom:8px">Other Hackathon Participations</h3>
+  <p class="sub" style="margin:0 auto 20px;max-width:560px">All other national and global hackathon participation certificates are organized in a dedicated sub-page gallery with real-time search.</p>
+  <a class="btn p" href="participations.html" style="font-size:.95rem;padding:12px 28px">&rarr; View All Participated Certificates</a>
+</div>
+</section>
 
 <section id="leadership" class="sec rv"><h2><small>07</small>Leadership, Organizing &amp; Evaluation</h2>
 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start">
@@ -208,8 +214,6 @@ const sk=k=>{$("#skb").innerHTML=SK[k].map(x=>`<span class="tag" style="font-siz
 $("#skt").onclick=e=>{const b=e.target.closest("[data-s]");if(!b)return;$$("#skt .chip").forEach(x=>x.classList.toggle("on",x==b));sk(b.dataset.s)};
 $("#hg").innerHTML=C.map((x,i)=>[x,i]).filter(([x])=>x[4]=="win").map(([x,i])=>`<div class="card" data-c="${i}" style="cursor:pointer"><span class="tag" style="margin:0 0 8px">Verified certificate</span><h3>${x[1]}</h3><p>${x[2]} &middot; ${x[3]}</p></div>`).join("")+
 `<div class="card"><span class="tag" style="margin:0 0 8px">Per Devpost email</span><h3>CodeNova 2026: Second Runner up (NeuroGuard AI)</h3><p>Certificate pending.</p></div><div class="card"><span class="tag" style="margin:0 0 8px">Per official email</span><h3>Zynetrox National Hackathon 2026: Finalist</h3><p>Shortlisted for the Final Round after PPT review (8 May 2026).</p></div>`;
-$("#hp").innerHTML=C.map((x,i)=>[x,i]).filter(([x])=>x[4]=="part").map(([x,i])=>`<div class="card" data-c="${i}" tabindex="0"><img src="assets/certificates/${x[0]}.jpg" alt="${x[1]}" loading="lazy"><h3 style="font-size:.9rem">${x[1]}</h3><p>${x[2]} &middot; ${x[3]}</p></div>`).join("");
-$("#hp").onkeydown=e=>{if(e.key=="Enter")e.target.click()};
 const cg=q=>{$("#cgd").innerHTML=C.map((x,i)=>[x,i]).filter(([x])=>x[4]=="workshop"&&(x[1]+x[2]+x[3]).toLowerCase().includes(q)).map(([x,i])=>`<div class="card" data-c="${i}" tabindex="0"><img src="assets/certificates/${x[0]}.jpg" alt="${x[1]}" loading="lazy"><h3 style="font-size:.9rem">${x[1]}</h3><p>${x[2]} &middot; ${x[3]}</p></div>`).join("")};cg("");
 $("#cs").oninput=e=>cg(e.target.value.toLowerCase());
 $("#cgd").onkeydown=e=>{if(e.key=="Enter")e.target.click()};

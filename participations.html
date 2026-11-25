@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hackathon Participations | Thamarai Selvan G</title>
+<meta name="description" content="Verified hackathon participation certificates and event records of Thamarai Selvan G.">
+<style>
+:root{--bg:#050B18;--bg2:#08172B;--blue:#2563EB;--cy:#00D9FF;--lc:#67E8F9;--tx:#F0F7FF;--t2:#9FB4CB;--line:rgba(103,232,249,.16);--f:Inter,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.65 var(--f);min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--lc);text-decoration:none}a:hover{color:#fff}
+header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px 6vw;background:rgba(5,11,24,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header b{letter-spacing:.08em;font-size:1.05rem}
+.back-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:10px;border:1px solid var(--cy);color:var(--cy);font-weight:600;font-size:.85rem;background:rgba(0,217,255,.05);transition:.25s}
+.back-btn:hover{background:var(--cy);color:#050B18;box-shadow:0 0 16px rgba(0,217,255,.4)}
+main{flex:1;max-width:1240px;width:100%;margin:0 auto;padding:48px 6vw}
+.hero{margin-bottom:32px}
+.lab{color:var(--cy);letter-spacing:.22em;font-size:.76rem;text-transform:uppercase;font-weight:600}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);margin:8px 0 12px;line-height:1.15}
+.sub{color:var(--t2);max-width:760px;font-size:1rem}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:28px 0 24px}
+input[type=search]{flex:1;min-width:260px;max-width:440px;background:var(--bg2);border:1px solid var(--line);color:var(--tx);padding:10px 16px;border-radius:10px;font:inherit;outline:none;transition:border-color .2s}
+input[type=search]:focus{border-color:var(--cy)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:0;border:1px solid var(--line);color:var(--t2);padding:7px 16px;border-radius:99px;cursor:pointer;font:inherit;font-size:.82rem;transition:.2s}
+.chip:hover{border-color:var(--cy);color:var(--tx)}
+.chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.count{color:var(--t2);font-size:.88rem;margin-bottom:18px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.card{background:linear-gradient(160deg,rgba(8,23,43,.92),rgba(5,11,24,.85));border:1px solid var(--line);border-radius:14px;padding:12px;cursor:pointer;transition:.25s;display:flex;flex-direction:column}
+.card:hover{border-color:var(--cy);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,217,255,.12)}
+.card img{border-radius:8px;aspect-ratio:4/3;object-fit:cover;width:100%;margin-bottom:12px;background:#030712}
+.card h3{font-size:.95rem;line-height:1.35;margin-bottom:6px;flex:1}
+.card p{color:var(--t2);font-size:.82rem}
+.badge{display:inline-block;align-self:flex-start;font-size:.66rem;color:var(--lc);border:1px solid var(--line);border-radius:99px;padding:2px 8px;margin-bottom:8px}
+#dlg{position:fixed;inset:0;z-index:100;display:none;place-items:center;background:rgba(0,0,0,.85);padding:3vw}
+#dlg.o{display:grid}
+#dlg .bx{background:var(--bg2);color:var(--tx);border:1px solid var(--cy);border-radius:16px;padding:24px;width:min(860px,94vw);max-height:92vh;overflow:auto}
+#dlg img{border-radius:10px;margin:14px 0;width:100%;max-height:65vh;object-fit:contain;background:#000}
+.btn{display:inline-block;padding:9px 18px;border-radius:10px;border:1px solid var(--cy);color:var(--cy);font-weight:600;font-size:.88rem;background:0;cursor:pointer;font-family:inherit;transition:.2s}
+.btn:hover{background:var(--cy);color:#050B18}
+footer{text-align:center;color:var(--t2);font-size:.8rem;padding:32px 6vw;border-top:1px solid var(--line);margin-top:auto}
+.empty{grid-column:1/-1;text-align:center;padding:48px 20px;color:var(--t2)}
+</style>
+</head>
+<body>
+<header>
+  <b>TS.G &middot; PORTFOLIO</b>
+  <a class="back-btn" href="index.html#hackathons">&larr; Back to Portfolio</a>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="lab">Verification Gallery</div>
+    <h1>Hackathon &amp; Event Participations</h1>
+    <p class="sub">Complete archive of verified certificates from national and international hackathons, open-source programs, and technical challenges. Tap any certificate to inspect the full credential.</p>
+  </div>
+
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search by hackathon, organizer, or date..." aria-label="Search certificates">
+    <div class="chips" id="flt">
+      <button class="chip on" data-f="all">All Participations (18)</button>
+      <button class="chip" data-f="hack">Hackathons (14)</button>
+      <button class="chip" data-f="event">Workshops &amp; Events (4)</button>
+    </div>
+  </div>
+
+  <div class="count" id="cnt">Showing 18 certificates</div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  &copy; 2026 Thamarai Selvan G &middot; <a href="index.html">Return to Home Portfolio</a>
+</footer>
+
+<div id="dlg" role="dialog" aria-modal="true"></div>
+
+<script>
+"use strict";
+const P = [
+  // [file, title, org, date, category]
+  ["zynetrox", "Zynetrox Hackathon 2026, Participation (NeuroGuard 360; Shortlisted for Final Round)", "Zynetrox", "19 May 2026", "hack"],
+  ["hackvega", "HackVega 2.0, Participation", "Careernet", "2026", "hack"],
+  ["elevate", "ELEVATE 2026, Participation", "Ideakode", "2026", "hack"],
+  ["techtitans", "Tech Titans Challenge 2026, Participation", "Learnix Labs", "2026", "hack"],
+  ["hackspora", "HACKSPORA 2.0, 24-hour National Hackathon", "Karpagam Academy of Higher Education", "19-20 Sep 2026", "hack"],
+  ["hackdavengers", "HackDavengers 1.0 (8HR), Appreciation", "Devengers / Unstop", "2026", "hack"],
+  ["aiforbharat", "AI for Bharat Hackathon 2026, Eliminator Round", "IIIT Delhi / Unstop", "2026", "hack"],
+  ["buildai", "Build in AI for India 2026, Participation", "Build in AI for India", "13-19 Jul 2026", "hack"],
+  ["hackhazards", "HackHazards 2026, Participation", "NAMESPACE", "22 Jul 2026", "hack"],
+  ["flowzint", "FlowZint AI Hackathon 2026, Participation", "FlowZint", "20 Jul 2026", "hack"],
+  ["spectrum", "Summer Hackathon 2026, Participation", "SpectrumCircle", "2026", "hack"],
+  ["rockverse", "RockVerse, Participation", "Big Rock Exchange", "7-15 May 2026", "hack"],
+  ["innovation", "Agentic AI Innovation Challenge 2026, Participation", "Innovation Hacks", "2026", "hack"],
+  ["hackzen", "Technotronz'26: Hackzen, Participation", "PSG College of Technology", "7-8 Feb 2026", "hack"],
+  ["retrofest", "RETROFEST'26: Red Data Redemption, Participation", "SRM Institute of Science and Technology", "1-2 Apr 2026", "event"],
+  ["inquista", "Technotronz'26: Inquista, Participation", "PSG College of Technology", "7-8 Feb 2026", "event"],
+  ["amperon", "Technotronz'26: Amperon, Participation", "PSG College of Technology", "7-8 Feb 2026", "event"],
+  ["dsoc", "Dev Season of Code 2026, Participant", "Devpost", "2026", "event"]
+];
+
+const grid = document.getElementById("grid");
+const qInput = document.getElementById("q");
+const countEl = document.getElementById("cnt");
+const fltBox = document.getElementById("flt");
+const dlg = document.getElementById("dlg");
+
+let currentFilter = "all";
+let currentQuery = "";
+
+const shut = () => dlg.classList.remove("o");
+const open = (item) => {
+  dlg.innerHTML = `
+    <div class="bx">
+      <h3>${item[1]}</h3>
+      <p style="color:var(--t2);margin-top:4px">${item[2]} &middot; ${item[3]}</p>
+      <img src="assets/certificates/${item[0]}.jpg" alt="${item[1]}">
+      <p><button class="btn" id="cls">Close</button></p>
+    </div>
+  `;
+  dlg.classList.add("o");
+  document.getElementById("cls").onclick = shut;
+};
+
+dlg.addEventListener("click", e => { if (e.target === dlg) shut(); });
+window.addEventListener("keydown", e => { if (e.key === "Escape") shut(); });
+
+function render() {
+  const filtered = P.filter(item => {
+    const matchesFilter = currentFilter === "all" || item[4] === currentFilter;
+    const matchesQuery = !currentQuery || (item[1] + item[2] + item[3]).toLowerCase().includes(currentQuery);
+    return matchesFilter && matchesQuery;
+  });
+
+  countEl.textContent = `Showing ${filtered.length} of ${P.length} certificate${P.length === 1 ? '' : 's'}`;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty"><h3>No certificates found matching "${currentQuery}"</h3><p style="margin-top:8px">Try searching another term or resetting filters.</p></div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(item => `
+    <article class="card" tabindex="0" data-f="${item[0]}">
+      <span class="badge">${item[4] === "hack" ? "Hackathon Participation" : "Workshop / Event"}</span>
+      <img src="assets/certificates/${item[0]}.jpg" alt="${item[1]}" loading="lazy">
+      <h3>${item[1]}</h3>
+      <p>${item[2]} &middot; ${item[3]}</p>
+    </article>
+  `).join("");
+
+  grid.querySelectorAll(".card").forEach(c => {
+    c.onclick = () => {
+      const it = P.find(x => x[0] === c.dataset.f);
+      if (it) open(it);
+    };
+    c.onkeydown = e => { if (e.key === "Enter") c.click(); };
+  });
+}
+
+qInput.addEventListener("input", e => {
+  currentQuery = e.target.value.trim().toLowerCase();
+  render();
+});
+
+fltBox.addEventListener("click", e => {
+  const btn = e.target.closest("[data-f]");
+  if (!btn) return;
+  fltBox.querySelectorAll(".chip").forEach(b => b.classList.toggle("on", b === btn));
+  currentFilter = btn.dataset.f;
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
